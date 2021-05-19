@@ -1,0 +1,15 @@
+{
+  "name": "discordjs-bot",
+  "version": "1.0.0",
+  "description": "My own discord bot using Discord.js!",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": " https://github.com/Cattodeveloper909/discordjs-bot.git"
+  },
+  "author": "Said Neder",
+  "license": "GPL-3.0-or-later"
+}
