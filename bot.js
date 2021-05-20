@@ -7,7 +7,7 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 
 // remote config file where my data is stored
-const { prefix, token} = require('./config.json');
+const {prefix, token, fima, biologia, quimica, filosofia, ppe, historia,} = require('./config.json');
 
 // Date library of node
 
@@ -42,14 +42,21 @@ function help() {
     9{class} =
      it will show the class link📝
 
-           📚classes code📚
+             📚classes code📚
       · 9mf -> Matematica y Fisica📘
+
       · 9hi -> Historia📒
+
       · 9fi -> Filosofia📒
+
       · 9in -> Ingles📘
+
       · 9pe -> Participacion Estudiantil📓
+
       · 9qu -> Quimica📗
+
       · 9bi -> Biologia📗
+
       · 9le -> Lenguaje📖
 
      9info =
@@ -63,103 +70,96 @@ client.on('message', message => {
 
 //declaring variables
 const friday = `
-   8:00 am  | English
-   8:35 am  | English
-   9.10 am  | PPE
+   8:00 am  -- English
+   8:35 am  -- English
+   9.10 am  -- PPE
 
-   9:45 am  | Receso
+   9:45 am  -- Receso
 
-   10:00 am | PPE
-   10:35 am | English
-   11:10 am | English
+   10:00 am -- PPE
+   10:35 am -- English
+   11:10 am -- English
 
-   11:45 AM | Receso
+   11:45 AM -- Receso
 
-   12:00 am | Matematica
+   12:00 am -- Matematica
 
 `;
 
 const thursday = `
-   8:00 am  | English
-   8:35 am  | English
-   9.10 am  | Quimica
+   8:00 am  -- English
+   8:35 am  -- English
+   9.10 am  -- Quimica
 
-   9:45 AM  | Receso
+   9:45 AM  -- Receso
 
-   10:00 am | Biologia
-   10:35 am | English
-   11:10 am | English
+   10:00 am -- Historia
+   10:35 am -- Matematicas
+   11:10 am -- Biologia
 
-   11:45 AM | Receso
+   11:45 AM -- Receso
 
-   12:00 am | Lenguaje
+   12:00 am -- Lenguaje
 
 `;
 
 const wednesday = `
-   8:00 am  | Matematica
-   8:35 am  | Matematica
-   9.10 am  | Quimica
+   8:00 am  -- Matematica
+   8:35 am  -- Matematica
+   9.10 am  -- Quimica
 
-   9:45 AM  | Receso
+   9:45 AM  -- Receso
 
-   10:00 am | Biologia
-   10:35 am | English
-   11:10 am | English
+   10:00 am -- Biologia
+   10:35 am -- English
+   11:10 am -- English
 
-   11:45 AM | Receso
+   11:45 AM -- Receso
 
-   12:00 am | Lenguaje
+   12:00 am -- Lenguaje
 
 `;
 
 const tuesday = `
-   8:00 am  | Fisica
-   8:35 am  | Historia
-   9.10 am  | English
+   8:00 am  -- Fisica
+   8:35 am  -- Historia
+   9.10 am  -- English
 
-   9:45 AM  | Receso
+   9:45 AM  -- Receso
 
-   10:00 am | English
-   10:35 am | Filosofia
-   11:10 am | Orientacion Vocacional
+   10:00 am -- English
+   10:35 am -- Filosofia
+   11:10 am -- Orientacion Vocacional
 
-   11:45 AM | Receso
+   11:45 AM -- Receso
 
-   12:00 am | Lenguaje
+   12:00 am -- Lenguaje
 
 `;
 
 const monday = `
-   8:00 am  | Fisica
-   8:35 am  | Historia
-   9.10 am  | English
+   8:00 am  -- Fisica
+   8:35 am  -- Historia
+   9.10 am  -- English
 
-   9:45 am  | Receso
+   9:45 am  -- Receso
 
-   10:00 am | English
-   10:35 am | Filosofia
-   11:10 am | English
+   10:00 am -- English
+   10:35 am -- Filosofia
+   11:10 am -- English
 
-   11:45 AM | Receso
+   11:45 AM -- Receso
 
-   12:00 am | English
+   12:00 am -- Lenguaje
 
 `;
-var days = ["miau" ,monday, tuesday, wednesday, thursday, friday]
+var days = [monday, tuesday, wednesday, thursday, friday]
 const date = new Date();
 const today = date.getUTCDay();
+let time = date.getHours() + date.getMinutes();
 const calendar = "https://calendar.google.com/calendar/u/1/r";
 const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
 const idukay = "https://idukay.net/#/";
-const fima = "https://us02web.zoom.us/j/86383851648?pwd=cHJuWlF5SzhtTEVkNHBXTklVeWVKdz09";
-const lenguaje = "https://us02web.zoom.us/j/84889661094?pwd=d09BTnBCNnhxcVRBcjlOcTNCWjZMUT09";
-const ingles = "https://us02web.zoom.us/j/89070656633?pwd=dkd2N1pHN2MwY0hPSGxUSUNHTmx4Zz09";
-const biologia = "https://us02web.zoom.us/j/85602162510?pwd=WEJER0dlQ2FhRHpMcmdrUzdkdk8zQT09";
-const quimica = "https://us02web.zoom.us/j/88295123683?pwd=YWFEWlhLby9TdGVnMGExaDdKSUhSQT09";
-const ppe = "https://us02web.zoom.us/j/83234363737?pwd=RDRwL3RsVUwyM1poVTZHNmN5dldidz09";
-const historia = "https://us02web.zoom.us/j/82231633269?pwd=NU54MFhlSlRiU0Z5WDdBY0FoUlpVdz09";
-const filosofia = "https://us02web.zoom.us/j/89834737741?pwd=d3Yweks5TFF5VFArMVNOZW1ZTmMwdz09";
 const github = "https://github.com/Cattodeveloper909";
 const discordid = "DarthNeder#2142";
 // Print every message in the server in the console
@@ -207,10 +207,10 @@ const discordid = "DarthNeder#2142";
         message.channel.send(`PPE class: ${ppe}`);
 
   } else if (message.content === `${prefix}day`) {
-        message.channel.send(`Today's scheadule: ${days[today]} `)
+        message.channel.send(`Today's scheadule: ${days[today + 1], time} `)
 
   } else if (message.content === `${prefix}info`) {
-        message.channel.send(`This was made by Said Neder\nGithub: ${github}`)
+        message.channel.send(`This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`)
 
   };
 

@@ -1,4 +1,15 @@
 {
 	"prefix": "9",
-	"token": "ODQ0NTU3MzQ0NjU0MDk4NDcy.YKUJUg._XEHGfByPaXXDZdHiAiKGO5eSLg"
+	"token": "ODQ0NTU3MzQ0NjU0MDk4NDcy.YKUJUg._XEHGfByPaXXDZdHiAiKGO5eSLg",
+	"fima": "https://us02web.zoom.us/j/86383851648?pwd=cHJuWlF5SzhtTEVkNHBXTklVeWVKdz09",
+  "lenguaje": "https://us02web.zoom.us/j/84889661094?pwd=d09BTnBCNnhxcVRBcjlOcTNCWjZMUT09";
+  "ingles": "https://us02web.zoom.us/j/89070656633?pwd=dkd2N1pHN2MwY0hPSGxUSUNHTmx4Zz09";
+  "biologia": "https://us02web.zoom.us/j/85602162510?pwd=WEJER0dlQ2FhRHpMcmdrUzdkdk8zQT09";
+  "quimica": "https://us02web.zoom.us/j/88295123683?pwd=YWFEWlhLby9TdGVnMGExaDdKSUhSQT09";
+  "ppe": "https://us02web.zoom.us/j/83234363737?pwd=RDRwL3RsVUwyM1poVTZHNmN5dldidz09";
+  "historia": "https://us02web.zoom.us/j/82231633269?pwd=NU54MFhlSlRiU0Z5WDdBY0FoUlpVdz09";
+  "filosofia": "https://us02web.zoom.us/j/89834737741?pwd=d3Yweks5TFF5VFArMVNOZW1ZTmMwdz09";
+
+
+
 }
