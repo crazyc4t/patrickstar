@@ -11,5 +11,8 @@
     "url": " https://github.com/Cattodeveloper909/discordjs-bot.git"
   },
   "author": "Said Neder",
-  "license": "GPL-3.0-or-later"
+  "license": "GPL-3.0-or-later",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
 }
