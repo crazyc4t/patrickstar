@@ -170,7 +170,6 @@ client.on("message", (message) => {
   const discordid = "DarthNeder#2142";
   // Print every message in the server in the console
   console.log(message.content);
-  console.log(time);
 
   // if one of the message is help do this:
   if (message.content === `${prefix}help`) {
