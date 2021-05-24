@@ -1,20 +1,29 @@
 // Logging into discord =
 
 // require the discord.js module
-const Discord = require('discord.js');
+const Discord = require("discord.js");
 
 // create a new Discord client
 const client = new Discord.Client();
 
 // remote config file where my data is stored
-const {prefix, token, fima, biologia, quimica, filosofia, ppe, historia,} = require('./config.json');
+const {
+  prefix,
+  token,
+  fima,
+  biologia,
+  quimica,
+  filosofia,
+  ppe,
+  historia,
+} = require("./config.json");
 
 // Date library of node
 
 // When client is ready, run this:
 // This will only run one time after logging in
-client.once('ready', () => {
-  console.log(`Online as ${client.user.tag}`)
+client.once("ready", () => {
+  console.log(`Online as ${client.user.tag}`);
   client.user.setActivity("9help");
 });
 
@@ -61,15 +70,13 @@ function help() {
 
      9info =
      Information about the project!😄
-  `
-};
-
+  `;
+}
 
 // Listening to messages if the client is on
-client.on('message', message => {
-
-//declaring variables
-const friday = `
+client.on("message", (message) => {
+  //declaring variables
+  const friday = `
    8:00 am  -- English
    8:35 am  -- English
    9.10 am  -- PPE
@@ -86,7 +93,7 @@ const friday = `
 
 `;
 
-const thursday = `
+  const thursday = `
    8:00 am  -- English
    8:35 am  -- English
    9.10 am  -- Quimica
@@ -103,7 +110,7 @@ const thursday = `
 
 `;
 
-const wednesday = `
+  const wednesday = `
    8:00 am  -- Matematica
    8:35 am  -- Matematica
    9.10 am  -- Quimica
@@ -120,7 +127,7 @@ const wednesday = `
 
 `;
 
-const tuesday = `
+  const tuesday = `
    8:00 am  -- Fisica
    8:35 am  -- Historia
    9.10 am  -- English
@@ -137,7 +144,7 @@ const tuesday = `
 
 `;
 
-const monday = `
+  const monday = `
    8:00 am  -- Fisica
    8:35 am  -- Historia
    9.10 am  -- English
@@ -153,65 +160,51 @@ const monday = `
    12:00 am -- Lenguaje
 
 `;
-var days = [monday, tuesday, wednesday, thursday, friday]
-const date = new Date();
-const today = date.getUTCDay();
-let time = date.getHours() + date.getMinutes();
-const calendar = "https://calendar.google.com/calendar/u/1/r";
-const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
-const idukay = "https://idukay.net/#/";
-const github = "https://github.com/Cattodeveloper909";
-const discordid = "DarthNeder#2142";
-// Print every message in the server in the console
+  var days = [monday, tuesday, wednesday, thursday, friday];
+  const date = new Date();
+  const today = date.getUTCDay();
+  const calendar = "https://calendar.google.com/calendar/u/1/r";
+  const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
+  const idukay = "https://idukay.net/#/";
+  const github = "https://github.com/Cattodeveloper909";
+  const discordid = "DarthNeder#2142";
+  // Print every message in the server in the console
   console.log(message.content);
+  console.log(time);
 
-// if one of the message is help do this:
-   if (message.content === `${prefix}help`) {
+  // if one of the message is help do this:
+  if (message.content === `${prefix}help`) {
+    // reply in the same channel from it was sent
+    message.channel.send(help());
 
-// reply in the same channel from it was sent
-      message.channel.send(help());
-
-// you concatenate messages with the else if block
+    // you concatenate messages with the else if block
   } else if (message.content === `${prefix}calendar`) {
-
-        message.channel.send(`There you go! ${calendar}`)
-
+    message.channel.send(`There you go! ${calendar}`);
   } else if (message.content === `${prefix}idukay`) {
-        message.channel.send(`Voila! ${idukay}`)
-
+    message.channel.send(`Voila! ${idukay}`);
   } else if (message.content === `${prefix}mail`) {
-        message.channel.send(`Sent! ${gmail}`)
-
+    message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}mf`) {
-        message.channel.send(`Math class: ${fima}`)
-
+    message.channel.send(`Math class: ${fima}`);
   } else if (message.content === `${prefix}hi`) {
-        message.channel.send(`History class: ${historia}`)
-
+    message.channel.send(`History class: ${historia}`);
   } else if (message.content === `${prefix}fi`) {
-        message.channel.send(`Philosophy class: ${filosofia}`);
-
+    message.channel.send(`Philosophy class: ${filosofia}`);
   } else if (message.content === `${prefix}qu`) {
-        message.channel.send(`Chemistry class: ${quimica}`);
-
+    message.channel.send(`Chemistry class: ${quimica}`);
   } else if (message.content === `${prefix}bi`) {
-        message.channel.send(`Biology class: ${biologia}`);
-
+    message.channel.send(`Biology class: ${biologia}`);
   } else if (message.content === `${prefix}le`) {
-        message.channel.send(`Spanish class: ${lenguaje}`);
-
+    message.channel.send(`Spanish class: ${lenguaje}`);
   } else if (message.content === `${prefix}in`) {
-        message.channel.send(`English class: ${ingles}`);
-
+    message.channel.send(`English class: ${ingles}`);
   } else if (message.content === `${prefix}pe`) {
-        message.channel.send(`PPE class: ${ppe}`);
-
+    message.channel.send(`PPE class: ${ppe}`);
   } else if (message.content === `${prefix}day`) {
-        message.channel.send(`Today's scheadule: ${days[today + 1], time} `)
-
+    message.channel.send(`Today's scheadule: ${days[today + 1]} `);
   } else if (message.content === `${prefix}info`) {
-        message.channel.send(`This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`)
-
-  };
-
+    message.channel.send(
+      `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
+    );
+  }
 });
