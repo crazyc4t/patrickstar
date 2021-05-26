@@ -166,5 +166,7 @@ client.on("message", (message) => {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
     );
+  } else if (time === "2231") {
+    message.channel.send(`We made it!`);
   }
 });
