@@ -147,8 +147,7 @@ client.on("message", (message) => {
   const idukay = "https://idukay.net/#/";
   const github = "https://github.com/Cattodeveloper909";
   const discordid = "DarthNeder#2142";
-  // Print every message in the server in the console
-  console.log(message.content, time);
+
   // if one of the message is help do this:
   if (message.content === `${prefix}help`) {
     // reply in the same channel from it was sent
@@ -162,7 +161,7 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today + 1]} `);
+    message.channel.send(`Today's scheadule: ${days[today + 1]} ${time} `);
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
