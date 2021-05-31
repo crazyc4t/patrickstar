@@ -2,6 +2,7 @@
 
 // require the discord.js module
 const Discord = require("discord.js");
+const cron = require("cron");
 
 // create a new Discord client
 const client = new Discord.Client();
@@ -182,45 +183,60 @@ client.on("message", (message) => {
     `;
   }
   // send a message if it is the time specified.
-  if (time === "301") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification1 = new cron.CronJob("00 00 3 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "3351") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification2 = new cron.CronJob("00 35 3 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "4101") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification3 = new cron.CronJob("00 00 3 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "4451") {
-    message.channel.send(classbreak());
-  }
+  let classnotificatio4 = new cron.CronJob("00 10 4 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "501") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification5 = new cron.CronJob("00 45 4 * * *", () => {
+    channel.send(classbreak);
+  });
 
-  if (time === "5351") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification6 = new cron.CronJob("00 00 5 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "6101") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification7 = new cron.CronJob("00 35 5 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "6451") {
-    message.channel.send(classbreak());
-  }
+  let classnotification8 = new cron.CronJob("00 10 6 * * *", () => {
+    channel.send(notificationclass);
+  });
 
-  if (time === "701") {
-    message.channel.send(notificationclass());
-  }
+  let classnotification9 = new cron.CronJob("00 45 6 * * *", () => {
+    channel.send(classbreak);
+  });
 
-  if (time === "7351") {
-    message.channel.send(
-      `You have ended your classes! Enjoy the rest of the day!`
-    );
-  }
+  let classnotification10 = new cron.CronJob("00 00 7 * * *", () => {
+    channel.send(notificationclass);
+  });
+
+  let classnotification11 = new cron.CronJob("00 35 7 * * *", () => {
+    channel.send(`You have ended your classes! Enjoy the rest of the day!`);
+  });
+
+  // When you want to start it, use:
+  classnotification1.start();
+  classnotification2.start();
+  classnotification3.start();
+  classnotification4.start();
+  classnotification5.start();
+  classnotification6.start();
+  classnotification7.start();
+  classnotification8.start();
+  classnotification9.start();
+  classnotification10.start();
+  classnotification11.start();
 });
