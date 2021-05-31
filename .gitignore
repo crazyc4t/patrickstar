@@ -1,4 +1,3 @@
-#ignoring config.json for token privacy
-config.json 
+ 
 #node modules
 node_modules
