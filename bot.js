@@ -124,11 +124,11 @@ client.on("message", (message) => {
   const monday = `
    8:00 am  -- Fisica
    8:35 am  -- Historia
-   9.10 am  -- English
+   9.10 am  -- Emprendimiento y gestion
 
    9:45 am  -- Receso
 
-   10:00 am -- English
+   10:00 am -- Emprendimiento y gestion
    10:35 am -- Filosofia
    11:10 am -- English
 
@@ -147,7 +147,8 @@ client.on("message", (message) => {
   const idukay = "https://idukay.net/#/";
   const github = "https://github.com/Cattodeveloper909";
   const discordid = "DarthNeder#2142";
-  let control = true;
+  // Print every message in the server in the console
+  console.log(message.content, days[0]);
   // if one of the message is help do this:
   if (message.content === `${prefix}help`) {
     // reply in the same channel from it was sent
@@ -161,94 +162,10 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today + 1]} ${time} `);
+    message.channel.send(`Today's scheadule: ${days[today + 1]} `);
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
     );
   }
 });
-
-function notificationclass() {
-  return `
-  You have class! GO NOW ${idukay}
-  `;
-}
-
-function classbreak() {
-  return `
-  You have a break right now, patience and be calm, enjoy!
-  `;
-}
-// send a message if it is the time specified.
-if (time === "0300" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0335" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0410" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0445" && control === true) {
-  message.channel.send(classbreak());
-  control == false;
-}
-
-control == true;
-
-if (time === "0500" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0535" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0610" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0645" && control === true) {
-  message.channel.send(classbreak());
-  control == false;
-}
-
-control == true;
-
-if (time === "0700" && control === true) {
-  message.channel.send(notificationclass());
-  control == false;
-}
-
-control == true;
-
-if (time === "0735" && control === true) {
-  message.channel.send(
-    `You have ended your classes! Enjoy the rest of the day!`
-  );
-  control == false;
-}
-
-control == true;
