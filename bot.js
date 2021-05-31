@@ -195,7 +195,7 @@ client.on("message", (message) => {
     channel.send(notificationclass);
   });
 
-  let classnotificatio4 = new cron.CronJob("00 10 4 * * *", () => {
+  let classnotification4 = new cron.CronJob("00 10 4 * * *", () => {
     channel.send(notificationclass);
   });
 
