@@ -140,15 +140,16 @@ client.on("message", (message) => {
   var days = [monday, tuesday, wednesday, thursday, friday];
   const date = new Date();
   const today = date.getDay();
+  const seconds = date.getSeconds().toString();
   const hour = date.getHours().toString();
   const minutes = date.getMinutes().toString();
-  const time = hour + minutes;
+  const time = hour + minutes + seconds;
   const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
   const idukay = "https://idukay.net/#/";
   const github = "https://github.com/Cattodeveloper909";
   const discordid = "DarthNeder#2142";
   // Print every message in the server in the console
-  console.log(message.content, days[0]);
+  console.log(message.content, time);
   // if one of the message is help do this:
   if (message.content === `${prefix}help`) {
     // reply in the same channel from it was sent
@@ -166,6 +167,60 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
+    );
+  }
+
+  function notificationclass() {
+    return `
+    You have class! GO NOW ${idukay}
+    `;
+  }
+
+  function classbreak() {
+    return `
+    You have a break right now, patience and be calm, enjoy!
+    `;
+  }
+  // send a message if it is the time specified.
+  if (time === "301") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "3351") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "4101") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "4451") {
+    message.channel.send(classbreak());
+  }
+
+  if (time === "501") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "5351") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "6101") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "6451") {
+    message.channel.send(classbreak());
+  }
+
+  if (time === "701") {
+    message.channel.send(notificationclass());
+  }
+
+  if (time === "7351") {
+    message.channel.send(
+      `You have ended your classes! Enjoy the rest of the day!`
     );
   }
 });
