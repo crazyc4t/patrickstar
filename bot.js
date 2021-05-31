@@ -8,16 +8,7 @@ const cron = require("cron");
 const client = new Discord.Client();
 
 // remote config file where my data is stored
-const {
-  prefix,
-  token,
-  fima,
-  biologia,
-  quimica,
-  filosofia,
-  ppe,
-  historia,
-} = require("./config.json");
+const { prefix, token } = require("./config.json");
 
 // Date library of node
 
