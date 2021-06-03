@@ -212,7 +212,7 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today - 1]} ${kalamardo}`);
+    message.channel.send(`Today's scheadule: ${days[today - 1]}`);
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
