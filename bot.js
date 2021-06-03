@@ -19,6 +19,12 @@ client.once("ready", () => {
   client.user.setActivity("9help");
   const kalamardo = client.guilds.cache.get(guildid);
   const channel = kalamardo.channels.cache.get(channelid);
+  const idukay = "https://idukay.net/#/";
+  // messages
+
+  const notificationclass = `You have class! GO NOW ${idukay}`;
+
+  const classbreak = "You have a break right now, patience and be calm, enjoy!";
   // send a message if it is the time specified.
   let classnotification1 = new cron.CronJob("00 00 3 * * *", () => {
     channel.send(notificationclass);
@@ -192,13 +198,15 @@ client.on("message", (message) => {
   var days = [monday, tuesday, wednesday, thursday, friday];
   const date = new Date();
   const today = date.getDay();
+  const hour = date.getHours().toString();
+  const minutes = date.getMinutes().toString();
+  const time = hour + minutes;
   const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
-  const idukay = "https://idukay.net/#/";
   const github = "https://github.com/Cattodeveloper909";
   const discordid = "DarthNeder#2142";
-  const kalamardo = client.guilds.cache.get("814143626647961640");
+
   // Print every message in the server in the console
-  console.log(message.content);
+  console.log(message.content, time);
   // if one of the message is help do this:
   if (message.content === `${prefix}help`) {
     // reply in the same channel from it was sent
@@ -212,22 +220,10 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today - 1]}`);
+    message.channel.send(`Today's scheadule: ${days[today - 1]} ${time}`);
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
     );
   }
 });
-
-function notificationclass() {
-  return `
-  You have class! GO NOW ${idukay}
-  `;
-}
-
-function classbreak() {
-  return `
-  You have a break right now, patience and be calm, enjoy!
-  `;
-}
