@@ -20,56 +20,55 @@ client.once("ready", () => {
   const kalamardo = client.guilds.cache.get(guildid);
   const channel = kalamardo.channels.cache.get(channelid);
   const idukay = "https://idukay.net/#/";
+  const coolgif =
+    "https://media.discordapp.net/attachments/725628710606077984/780091466231185428/761364271510061136.gif";
   // messages
 
   const notificationclass = `You have class! GO NOW ${idukay}`;
 
   const classbreak = "You have a break right now, patience and be calm, enjoy!";
   // send a message if it is the time specified.
-  let classnotification1 = new cron.CronJob("00 00 3 * * *", () => {
+  let classnotification1 = new cron.CronJob("00 00 13 * * *", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification2 = new cron.CronJob("00 35 3 * * *", () => {
+  let classnotification2 = new cron.CronJob("00 35 13 * * *", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification3 = new cron.CronJob("00 00 3 * * *", () => {
+  let classnotification3 = new cron.CronJob("00 10 14 * * *", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification4 = new cron.CronJob("00 10 4 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification5 = new cron.CronJob("00 45 4 * * *", () => {
+  let classnotification4 = new cron.CronJob("00 45 14 * * *", () => {
     channel.send(classbreak);
   });
 
-  let classnotification6 = new cron.CronJob("00 00 5 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification7 = new cron.CronJob("00 35 5 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification8 = new cron.CronJob("00 10 6 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification9 = new cron.CronJob("00 45 6 * * *", () => {
+  let classnotification5 = new cron.CronJob("00 00 15 * * *", () => {
     channel.send(classbreak);
   });
 
-  let classnotification10 = new cron.CronJob("00 00 7 * * *", () => {
-    message.channel.send(notificationclass);
+  let classnotification6 = new cron.CronJob("00 35 15 * * *", () => {
+    channel.send(notificationclass);
   });
 
-  let classnotification11 = new cron.CronJob("00 35 7 * * *", () => {
-    channel.send(`You have ended your classes! Enjoy the rest of the day!`);
+  let classnotification7 = new cron.CronJob("00 10 16 * * *", () => {
+    channel.send(notificationclass);
   });
 
+  let classnotification8 = new cron.CronJob("00 45 16 * * *", () => {
+    channel.send(classbreak);
+  });
+
+  let classnotification9 = new cron.CronJob("00 00 17 * * *", () => {
+    channel.send(notificationclass);
+  });
+
+  let classnotification10 = new cron.CronJob("00 35 17 * * *", () => {
+    channel.send(
+      `You have ended your classes for today! enjoy the rest of your day ${coolgif}`
+    );
+  });
   // When you want to start it, use:
   classnotification1.start();
   classnotification2.start();
@@ -81,7 +80,6 @@ client.once("ready", () => {
   classnotification8.start();
   classnotification9.start();
   classnotification10.start();
-  classnotification11.start();
 });
 
 // login to Discord with token
@@ -204,6 +202,7 @@ client.on("message", (message) => {
   const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
   const github = "https://github.com/Cattodeveloper909";
   const discordid = "DarthNeder#2142";
+  const idukay = "https://idukay.net/#/";
 
   // Print every message in the server in the console
   console.log(message.content, time);
@@ -220,7 +219,7 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today - 1]} ${time}`);
+    message.channel.send(`Today's scheadule: ${days[today - 1]}`);
   } else if (message.content === `${prefix}info`) {
     message.channel.send(
       `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
