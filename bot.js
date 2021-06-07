@@ -178,11 +178,11 @@ client.on("message", (message) => {
   const monday = `
    8:00 am  -- Fisica
    8:35 am  -- Historia
-   9.10 am  -- Emprendimiento y gestion
+   9.10 am  -- Emprendimiento
 
    9:45 am  -- Receso
 
-   10:00 am -- Emprendimiento y gestion
+   10:00 am -- Emprendimiento
    10:35 am -- Filosofia
    11:10 am -- English
 
