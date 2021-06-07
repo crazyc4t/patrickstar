@@ -20,53 +20,51 @@ client.once("ready", () => {
   const kalamardo = client.guilds.cache.get(guildid);
   const channel = kalamardo.channels.cache.get(channelid);
   const idukay = "https://idukay.net/#/";
-  const coolgif =
-    "https://media.discordapp.net/attachments/725628710606077984/780091466231185428/761364271510061136.gif";
   // messages
 
   const notificationclass = `You have class! GO NOW ${idukay}`;
 
   const classbreak = "You have a break right now, patience and be calm, enjoy!";
   // send a message if it is the time specified.
-  let classnotification1 = new cron.CronJob("00 00 13 * * *", () => {
+  let classnotification1 = new cron.CronJob("00 00 13 * * 1-5", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification2 = new cron.CronJob("00 35 13 * * *", () => {
+  let classnotification2 = new cron.CronJob("00 35 13 * * 1-5", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification3 = new cron.CronJob("00 10 14 * * *", () => {
+  let classnotification3 = new cron.CronJob("00 10 14 * * 1-5", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification4 = new cron.CronJob("00 45 14 * * *", () => {
+  let classnotification4 = new cron.CronJob("00 45 14 * * 1-5", () => {
     channel.send(classbreak);
   });
 
-  let classnotification5 = new cron.CronJob("00 00 15 * * *", () => {
+  let classnotification5 = new cron.CronJob("00 00 15 * * 1-5", () => {
+    channel.send(notificationclass);
+  });
+
+  let classnotification6 = new cron.CronJob("00 35 15 * * 1-5", () => {
+    channel.send(notificationclass);
+  });
+
+  let classnotification7 = new cron.CronJob("00 10 16 * * 1-5", () => {
+    channel.send(notificationclass);
+  });
+
+  let classnotification8 = new cron.CronJob("00 45 16 * * 1-5", () => {
     channel.send(classbreak);
   });
 
-  let classnotification6 = new cron.CronJob("00 35 15 * * *", () => {
+  let classnotification9 = new cron.CronJob("00 00 17 * * 1-5", () => {
     channel.send(notificationclass);
   });
 
-  let classnotification7 = new cron.CronJob("00 10 16 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification8 = new cron.CronJob("00 45 16 * * *", () => {
-    channel.send(classbreak);
-  });
-
-  let classnotification9 = new cron.CronJob("00 00 17 * * *", () => {
-    channel.send(notificationclass);
-  });
-
-  let classnotification10 = new cron.CronJob("00 35 17 * * *", () => {
+  let classnotification10 = new cron.CronJob("00 35 17 * * 1-5", () => {
     channel.send(
-      `You have ended your classes for today! enjoy the rest of your day ${coolgif}`
+      `You have ended your classes for today! enjoy the rest of your day`
     );
   });
   // When you want to start it, use:
