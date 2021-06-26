@@ -1,3 +1,4 @@
+// TO DO: Documentation on Mark down format
 // Logging into discord =
 
 // require the discord.js module
