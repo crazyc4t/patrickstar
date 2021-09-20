@@ -1,18 +1,18 @@
 
-// ________  ________  ________  ________      ___    ___ ________ ___   ___  _________   
-//|\   ____\|\   __  \|\   __  \|\_____  \    |\  \  /  /|\   ____\\  \ |\  \|\___   ___\ 
-//\ \  \___|\ \  \|\  \ \  \|\  \\|___/  /|   \ \  \/  / | \  \___\ \  \\_\  \|___ \  \_| 
-// \ \  \    \ \   _  _\ \   __  \   /  / /    \ \    / / \ \  \   \ \______  \   \ \  \  
-//  \ \  \____\ \  \\  \\ \  \ \  \ /  /_/__    \/  /  /   \ \  \___\|_____|\  \   \ \  \ 
+// ________  ________  ________  ________      ___    ___ ________ ___   ___  _________
+//|\   ____\|\   __  \|\   __  \|\_____  \    |\  \  /  /|\   ____\\  \ |\  \|\___   ___\
+//\ \  \___|\ \  \|\  \ \  \|\  \\|___/  /|   \ \  \/  / | \  \___\ \  \\_\  \|___ \  \_|
+// \ \  \    \ \   _  _\ \   __  \   /  / /    \ \    / / \ \  \   \ \______  \   \ \  \
+//  \ \  \____\ \  \\  \\ \  \ \  \ /  /_/__    \/  /  /   \ \  \___\|_____|\  \   \ \  \
 //   \ \_______\ \__\\ _\\ \__\ \__\\________\__/  / /      \ \_______\    \ \__\   \ \__\
 //    \|_______|\|__|\|__|\|__|\|__|\|_______|\___/ /        \|_______|     \|__|    \|__|
-//                                           \|___|/                                      
-                                                                                        
+//                                           \|___|/
+
 
 // ---------------Patrick Star Class notifier bot-----------------
 // Docs = https://discordjs.guide/#before-you-begin
 
-// ----------Logging into discord-------------- 
+// ----------Logging into discord--------------
 
 // require the discord.js and cron module
 const Discord = require("discord.js");
@@ -32,7 +32,7 @@ client.once("ready", () => {
   const kalamardo = client.guilds.cache.get(guildid);
   const channel = kalamardo.channels.cache.get(channelid);
   const idukay = "https://idukay.net/#/";
-  
+
 // ------------------------ Messages and cron jobs ------------------------------
 	// A cron job is a process that is going to execute something at a certain time.
 	// Docs: https://www.npmjs.com/package/cron
@@ -82,7 +82,7 @@ client.once("ready", () => {
       `You have ended your classes for today! enjoy the rest of your day`
     );
   });
-  
+
   // When you want to start it, use:
   classnotification1.start();
   classnotification2.start();
@@ -225,10 +225,17 @@ client.on("message", (message) => {
     message.channel.send(help());
 
     // you concatenate messages with the else if block
-  } else if (message.content === `${prefix}calendar`) {
-    message.channel.send(`There you go! ${calendar}`);
-  } else if (message.content === `${prefix}idukay`) {
-    message.channel.send(`Voila! ${idukay}`);
-  } else if (message.content === `${prefix}mail`) {
-    message.channel.send(`Sent! ${gmail}`);
-  } else if (message.content === `${prefix}day`) {
+ } else if (message.content === `${prefix}calendar`) {
+  message.channel.send(`There you go! ${calendar}`);
+ } else if (message.content === `${prefix}idukay`) {
+  message.channel.send(`Voila! ${idukay}`);
+ } else if (message.content === `${prefix}mail`) {
+  message.channel.send(`Sent! ${gmail}`);
+ } else if (message.content === `${prefix}day`) {
+  message.channel.send(`Today's scheadule: ${days[today - 1]}`);
+ } else if (message.content === `${prefix}info`) {
+  message.channel.send(
+    `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
+  );
+ }
+});
