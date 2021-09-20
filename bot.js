@@ -1,7 +1,13 @@
-// TO DO: Documentation on Mark down format
-// Logging into discord =
+// / __| __ _ (_) __| |      | \| | ___  __| | ___  _ _
+// \__ \/ _` || |/ _` |      | .  |/ -_)/ _` |/ -_)| '_|
+// |___/\__/_||_|\__/_|      |_|\_|\___|\__/_|\___||_|
 
-// require the discord.js module
+// ---------------Patrick Star Class notifier bot-----------------
+// Docs = https://discordjs.guide/#before-you-begin
+
+// ----------Logging into discord-------------- 
+
+// require the discord.js and cron module
 const Discord = require("discord.js");
 const cron = require("cron");
 
@@ -11,8 +17,6 @@ const client = new Discord.Client();
 // remote config file where my data is stored
 const { prefix, token, channelid, guildid } = require("./config.json");
 
-// Date library of node
-
 // When client is ready, run this:
 // This will only run one time after logging in
 client.once("ready", () => {
@@ -21,7 +25,10 @@ client.once("ready", () => {
   const kalamardo = client.guilds.cache.get(guildid);
   const channel = kalamardo.channels.cache.get(channelid);
   const idukay = "https://idukay.net/#/";
-  // messages
+  
+// ------------------------ Messages and cron jobs ------------------------------
+	// A cron job is a process that is going to execute something at a certain time.
+	// Docs: https://www.npmjs.com/package/cron
 
   const notificationclass = `You have class! GO NOW ${idukay}`;
 
@@ -68,6 +75,7 @@ client.once("ready", () => {
       `You have ended your classes for today! enjoy the rest of your day`
     );
   });
+  
   // When you want to start it, use:
   classnotification1.start();
   classnotification2.start();
@@ -84,8 +92,7 @@ client.once("ready", () => {
 // login to Discord with token
 client.login(token);
 
-//const spam = kalamardo.channels.cache.get("814147482719748146");
-// creating functions to use
+// creating functions to return text that we will use to reply back
 
 function help() {
   return `
@@ -199,7 +206,7 @@ client.on("message", (message) => {
   const minutes = date.getMinutes().toString();
   const time = hour + minutes;
   const gmail = "https://mail.google.com/mail/u/1/?ogbl#inbox";
-  const github = "https://github.com/Cattodeveloper909";
+  const github = "https://github.com/crazyc4t";
   const discordid = "DarthNeder#2142";
   const idukay = "https://idukay.net/#/";
 
@@ -218,10 +225,3 @@ client.on("message", (message) => {
   } else if (message.content === `${prefix}mail`) {
     message.channel.send(`Sent! ${gmail}`);
   } else if (message.content === `${prefix}day`) {
-    message.channel.send(`Today's scheadule: ${days[today - 1]}`);
-  } else if (message.content === `${prefix}info`) {
-    message.channel.send(
-      `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
-    );
-  }
-});
