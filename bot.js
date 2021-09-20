@@ -7,7 +7,7 @@
 //   \ \_______\ \__\\ _\\ \__\ \__\\________\__/  / /      \ \_______\    \ \__\   \ \__\
 //    \|_______|\|__|\|__|\|__|\|__|\|_______|\___/ /        \|_______|     \|__|    \|__|
 //                                           \|___|/
-
+// --------------------------------saidneder.tech----------------------------------------
 
 // ---------------Patrick Star Class notifier bot-----------------
 // Docs = https://discordjs.guide/#before-you-begin
@@ -216,6 +216,7 @@ client.on("message", (message) => {
   const github = "https://github.com/crazyc4t";
   const discordid = "DarthNeder#2142";
   const idukay = "https://idukay.net/#/";
+  const webpage = "https://saidneder.tech/";
 
   // Print every message in the server in the console
   console.log(message.content, time);
@@ -225,7 +226,7 @@ client.on("message", (message) => {
     message.channel.send(help());
 
     // you concatenate messages with the else if block
- } else if (message.content === `${prefix}calendar`) {
+} else if (message.content === `${prefix}calendar`) {
   message.channel.send(`There you go! ${calendar}`);
  } else if (message.content === `${prefix}idukay`) {
   message.channel.send(`Voila! ${idukay}`);
@@ -235,7 +236,7 @@ client.on("message", (message) => {
   message.channel.send(`Today's scheadule: ${days[today - 1]}`);
  } else if (message.content === `${prefix}info`) {
   message.channel.send(
-    `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}`
+    `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}\n Webpage: ${webpage}`
   );
  }
 });
