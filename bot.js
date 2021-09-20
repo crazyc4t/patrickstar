@@ -236,7 +236,7 @@ client.on("message", (message) => {
   message.channel.send(`Today's scheadule: ${days[today - 1]}`);
  } else if (message.content === `${prefix}info`) {
   message.channel.send(
-    `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}\n Webpage: ${webpage}`
+    `This was made by Said Neder\nGithub: ${github}\nDiscord: ${discordid}\nWebpage: ${webpage}`
   );
  }
 });
