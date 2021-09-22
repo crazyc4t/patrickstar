@@ -1,6 +1,6 @@
 # Patrick Star Bot 📕
 
-![GitHub](https://img.shields.io/github/license/crazyc4t/PatrickStar?color=brightgreen)
+![GitHub License](https://img.shields.io/github/license/crazyc4t/PatrickStar?color=brightgreen)
 ![GitHub last commit](https://img.shields.io/github/last-commit/crazyc4t/PatrickStar)
 
 This is my first time programming a bot on discord with discord.js!
@@ -44,14 +44,22 @@ And some knowledge on javascript!
 
 **Guide yourself with the official discord.js [docs](https://discordjs.guide/#before-you-begin)!**
 
-### Logging into discord
+## Before we begin
 
-First of all, we need to install the discord js library with a simple npm command!
+We need to clone this repo with this command:
+```bash
+git clone https://github.com/crazyc4t/PatrickStar.git
+```
+And then to install the discord js library with a simple npm command!
 
-`npm install discord.js`
-
+```bash
+npm install discord.js
+```
 create a new application in the developer portal of discord, [over here!](https://discord.com/developers/applications),
 once you go there create a new app and invite it to your server!
+
+After that, open the project folder in your favourite text editor and let's start!
+### Logging into discord
 
 Now in your folder project where you have your bot.js file, and create a `config.json` that is where
 we are going to store sensitive data so we can ignore it in a `.gitignore` file.
@@ -272,3 +280,13 @@ and now we turn on the worker that should appear, now it should be left like thi
 
 And after that you are done!
 Hope that you enjoyed the guide!
+
+---
+
+If you want to check more of my content, here is my [website](https://saidneder.tech/)!
+
+Or if you want you can invite me a coffee!
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Z8Z2643OM)
+
+Thank you for reading!

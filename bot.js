@@ -103,7 +103,7 @@ client.login(token);
 
 function help() {
   return `
-    📌Commands to use class notifier:
+    📌Commands to use patrick star:
 
     9day =
     Show the classes of the day📆
