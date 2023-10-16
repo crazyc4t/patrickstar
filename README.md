@@ -283,7 +283,7 @@ Hope that you enjoyed the guide!
 
 ---
 
-If you want to check more of my content, here is my [website](https://saidneder.tech/)!
+If you want to check more of my content, here is my [website](https://crazyc4t.xyz)!
 
 Or if you want you can invite me a coffee!
 
